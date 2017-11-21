@@ -20,7 +20,7 @@ public class SingleLinkedData<T> implements QueueInterface<T>{
 		// TODO Auto-generated method stub
 		Node oldNode = back;
 		back = new Node();
-		back.newT = newT;
+		//back.newT = node.newT;
 		back.node = null;
 		if (isEmpty())
 		{

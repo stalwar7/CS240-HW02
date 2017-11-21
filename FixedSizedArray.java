@@ -1,7 +1,3 @@
-/* Sana Talwar
- * CS 240
- * Homework 2
- */
 public class FixedSizedArray<T> implements StackInterface<T>{
 	
 	private T[] stack;
@@ -37,12 +33,14 @@ public class FixedSizedArray<T> implements StackInterface<T>{
 	//Decrements index
 	//returns the value on top
 	public T pop() {
+		T temp;
 		if(index == -1){
 			throw new Error ("Empty Stack");
 	}
 		else{
-			index--;
-			return stack[index];
+			temp = stack[index];
+			stack[index] = null;
+			return temp;
 	  }
 	}
 	
@@ -70,7 +68,7 @@ public class FixedSizedArray<T> implements StackInterface<T>{
 		{
 			for (int i = index; i >0; i++)
 			{
-				index--;
+				stack[index] = null;
 			}
 		}
 	}
