@@ -6,7 +6,7 @@ public class SingleLinkedData<T> implements QueueInterface<T>{
 	
 	private class Node
 	{
-		private T newT;
+		private T data;
 		private Node node;
 	}
 	public SingleLinkedData() {
@@ -17,8 +17,6 @@ public class SingleLinkedData<T> implements QueueInterface<T>{
 
 	@Override
 	public void enqueue(T newEntry) {
-		// TODO Auto-generated method stub
-		Node oldNode = back;
 		back = new Node();
 		//back.newT = node.newT;
 		back.node = null;
@@ -34,11 +32,10 @@ public class SingleLinkedData<T> implements QueueInterface<T>{
 
 	@Override
 	public T dequeue() {
-		// TODO Auto-generated method stub
 		if (isEmpty()){
 			throw new Error("Empty Queue");
 		}
-		T newT = front.newT;
+		T newT = front.data;
 		front = front.node;
 		size--;
 		if(isEmpty())
@@ -50,19 +47,23 @@ public class SingleLinkedData<T> implements QueueInterface<T>{
 
 	@Override
 	public T getFront() {
-		// TODO Auto-generated method stub
-		return front.newT;
+		return front.data;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return (front ==null && back == null);
+		return (size == -1);
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		while(!isEmpty())
+		{
+			Node temp = front.node;
+			front = null;
+			front = temp;
+			
+		}
 		
 	}
 

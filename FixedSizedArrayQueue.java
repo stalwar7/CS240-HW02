@@ -33,7 +33,6 @@ public class FixedSizedArrayQueue<T> implements QueueInterface<T>{
 
 	@Override
 	public T dequeue() {
-		// TODO Auto-generated method stub
 		T secondPlace = null;
 		if (front != back)
 		{
@@ -53,13 +52,11 @@ public class FixedSizedArrayQueue<T> implements QueueInterface<T>{
 
 	@Override
 	public T getFront() {
-		// TODO Auto-generated method stubs
 		return queue[front];
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
 		if (front < 0 && back <0)
 			return true;
 		else
@@ -68,7 +65,6 @@ public class FixedSizedArrayQueue<T> implements QueueInterface<T>{
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
 		if(isEmpty())
 			throw new Error("Empty Queue");
 		else

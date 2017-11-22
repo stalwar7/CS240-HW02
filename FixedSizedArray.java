@@ -5,6 +5,7 @@ public class FixedSizedArray<T> implements StackInterface<T>{
 	private int pointer;		//keeps fixed size (initial)
 	
 	// initializes variables
+	@SuppressWarnings("unchecked")
 	public FixedSizedArray(int size)
 	{
 		stack = (T[]) new Object[size];

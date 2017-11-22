@@ -5,7 +5,7 @@ public class LinkedData<T> implements StackInterface<T>{
 	
 	private class Node
 	{
-		T newT;
+		T data;
 		Node newNode;
 	}
 	
@@ -19,14 +19,14 @@ public class LinkedData<T> implements StackInterface<T>{
 	public void push(T newEntry) {
 		Node oldNode = node;
 		node = new Node();
-		node.newT = newEntry;
+		node.data = newEntry;
 		node.newNode = oldNode;
 		index++;		
 	}
 
 	@Override
 	public T pop() {
-		T newT = node.newT;
+		T newT = node.data;
 		node = node.newNode;
 		if (index <= 0)
 		{
@@ -41,9 +41,8 @@ public class LinkedData<T> implements StackInterface<T>{
 
 	@Override
 	public T peek() {
-		T newT = node.newT;
 		if (index > 0)
-			return newT;
+			return node.data;
 		else
 			throw new Error("Empty Stack");
 		
